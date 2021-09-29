@@ -1,21 +1,19 @@
 # python開發環境
-```
-python有許多開發環境與IDE(Pycharm, spyder,visual studio code,...)
+- python有許多開發環境與IDE(Pycharm, spyder, VSCode,...)
+- 我通常都是使用：
+   - linux => vim or VSCode
+   - Win10 => VSCode
+- 其他請參閱Google或書籍
+   - 如Windows python程式開發
 
-本課程將使用底下兩種
-[1]linux python程式開發(使用最簡單的gedit撰寫程式)
-[2]使用Goolge Colab 平台開發python程式
 
-其他請參閱Google或書籍
-   如Windows python程式開發
-```
 # [1]linux python程式開發
 
-![linux python程式開發](./pic/Linux_Python開發.png)
+![linux python程式開發]()
 
 ## linux python程式開發(1)互動式模式
 ### python3[持續發展中, 學習python的重心]
-```
+
 打開terminal ==> 輸入python3
      ===> 開始python3互動式 開發
      
