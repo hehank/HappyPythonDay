@@ -1,104 +1,59 @@
 # python開發環境
 - python有許多開發環境與IDE(Pycharm, spyder, VSCode,...)
-- 我通常都是使用：
-   - linux => vim or VSCode
+- 我通常都是使用(個人習慣)：
+   - linux(Ubuntu) => vim or VSCode
+      ![linux python](./pic/Ubuntu_Python.png)
    - Win10 => VSCode
+      ![windows_python](./pic/Win10_Python.png)
 - 其他請參閱Google或書籍
    - 如Windows python程式開發
 
+## linux python-互動模式
+### python3 [持續發展中, 學習python的重心]
+- \>>> [ your_python_code ]
+- help() => 在這個模式下可以輸入 python3 各種套件的名稱來查看該套件的文檔
+   - quit => 退出 help() 模式
+- \>>> exit() => 退出 python 互動模式
 
-# [1]linux python程式開發
+![Ubuntu_Python_Interactive_Mode](./pic/Ubuntu_Python_Interactive_mode.png)
 
-![linux python程式開發]()
+### python2 [已經不再更新, 但仍有些套件使用]
+- python2 在使用 print() 的時候可以不需要 () 直接加想輸出的字串
 
-## linux python程式開發(1)互動式模式
-### python3[持續發展中, 學習python的重心]
+![Ubuntu_Python2_Interactive_Mode.png](./pic/Ubuntu_Python2_Interactive_mode.png)
 
-打開terminal ==> 輸入python3
-     ===> 開始python3互動式 開發
-     
-root@kali:~# python3 <==輸入python3
-Python 3.7.3rc1 (default, Mar 13 2019, 11:01:15) 
-[GCC 8.3.0] on linux
-Type "help", "copyright", "credits" or "license" for more information.
+## linux python-標準模式
+- 使用vim
+   ```shell
+   vim XXX.py => 編輯 or 創建 python 檔
+   python3 XXX.py => 執行程式(python3)
+   python XXX.py => 執行程式(python2)
+   ```
 
-
->>> print("Hello, World!")   <== 輸入簡單的程式
-Hello, World!
-
->>> exit() <== 離開互動式模式
-```
-### python2[已經不再更新, 但仍有些套件使用]
-```
-打開terminal ==> 輸入python
-     ===> 開始python2互動式 開發
-
-oot@kali:~# python  <==輸入python
-Python 2.7.16 (default, Apr  6 2019, 01:42:57) 
-[GCC 8.3.0] on linux2
-Type "help", "copyright", "credits" or "license" for more information.
-
->>> print("Hello, World!")    <== 輸入簡單的程式
-Hello, World!
-
->>> exit()   <== 離開互動式模式
-```
-## linux python程式開發(2)標準模式
-```
-使用最簡單的gedit 撰寫程式 ==> gedit XXX.py
-執行程式 ==> python3 XXX.py
-```
-### 範例
-
-使用最簡單的gedit 撰寫程式 ==> gedit test.py
-```
-# 先不用解釋程式 後面會教
-i = 1
-
-while i < 6:
-  print(i)
-  i += 1
-```
-執行程式 ==> python3 XXX.py
-```
-python3 test.py
-
-#若是要執行python2程式 則執行python test.py
-```
 # [2]使用Goolge Colab 平台開發python程式
-```
-講師請自行決定教學內容
-底下僅提供簡單的測試
-有需要時再補充說明((或上網查詢)
-```
-```
-請課後 再看
-Colab 的簡介影片 ==>https://www.youtube.com/watch?v=inN8seMm7UI
-```
-### 單元大綱
-```
-開啟Google Colab
-將在Google Colab執行的程式存到你自己的 Github 
-打開Google Drive(雲端硬碟) 檢視你開發的python程式(XXX.ipynb)
-下載 在Google Colab執行的程式(XXX.py格式) 
-下載 在Google Colab執行的程式(XXX.ipynb格式) 
+- 恩師推薦
+- 免費的Jupyter Notebook環境
+- 在雲端中運行
+- 用這個環境附檔名不是 [.py] 是 [.ipynb]
 
-開啟別人在github上的XXX.ipynb程式
-
-講師可自行補充其他內容
-```
+![Google_Colab_Test](./pic/Google_Colab_test.png)
 
 ## 開始動手
-```
-Google 搜尋 Google Colab ==> 即可找到連結
-  ==> 點選連結 需先登入(建議使用Google 帳號登入)
-  ==> 出現選擇 檔案來源畫面 時 先按取消
-```
+### init
+- Google 搜尋 Google Colab ==> 即可找到連結
+   - ==> 點選連結 需先登入(建議使用Google 帳號登入)
+   - ==> 出現選擇 檔案來源畫面 時 先按取消
+
+### 使用 Google 免費的 GPU
+- 執行階段 -> 變更執行階段類型 -> 硬體加速器 -> 選 GPU
+- 查看 GPU 型號
+   ```shell
+   !nvidia-smi
+   ```
+
 ### 範例:查看重要 Google Colab已安裝的重要套件版本[先不要解釋內容]
-```
-將底下程式碼貼到cell
-ctrl + Enter 即可執行
-```
+- 將底下程式碼貼到cell
+- ctrl + Enter 即可執行
 ```
 import pandas as pd
 print("pandas version: %s" % pd.__version__)
@@ -119,12 +74,8 @@ import torch
 print("PyTorch version: %s" %torch.__version__)
 print("2021年4月PyTorch version最新版本 請參閱https://pytorch.org/")
 ```
-### 範例:已安裝的pyhon套件與版本[要有 驚嘆號 !]
+
+### 範例:已安裝的pyhon套件與版本 [要有 驚嘆號 !]
 ```
 !pip list
-```
-### 作業
-```
-上網google pip的各種作法
-https://pip.pypa.io/en/stable/
 ```
